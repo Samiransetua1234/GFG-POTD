@@ -1,0 +1,23 @@
+//EASY JAVA SOLUTION WITH EXPLAINATION
+
+//Just Traverse the Array and find the Sum first.
+//Find all Elements which follow the condition N*A[i]>=sum
+//Now, take minimum out of them following above conditions.
+//NOTE : Take N*1L*A[i] or ((long)N*A[i]) and sum as long to avoid integer overflow in case of big testcases.
+
+class Solution {
+    public static int minimumInteger(int N, int[] A) {
+        // code here
+        long S = 0;
+        for(int i = 0; i < N; i++){
+            S += A[i];
+        }
+        
+        int ans = Integer.MAX_VALUE;
+        for(int i = 0; i < N; i++){
+            if(N*1L*A[i] >= S) ans = Math.min(ans , A[i]);
+        }
+        
+        return ans;
+    }
+}
