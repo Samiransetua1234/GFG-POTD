@@ -1,0 +1,54 @@
+
+class Solution {
+    public long minOperations(int N) {
+        // Code here
+        
+        long cn = N;
+        long hn = N/2;
+        long res = hn*cn - hn*hn;
+        return res;
+    }
+}
+
+ 
+
+// Sum of N terms which are odd: N*N. For example, 1, 3, 5 = 9. 
+
+// Now, to minimise the operations we will always  try to reach at the centre. For example, 1, 3, 5, 7 = 4, 4, 4, 4. 
+
+// So, we know that sum of a[0] + a[n-1] = a[1] + a[n-2] 
+
+// Now, as we have to solve the problem in O(1), so let's start making a formula. 
+
+// Let us analyse this test case. For example, 1, 3, 5, 7. 
+
+// let us write it in variable terms. a[0], a[1], a[2], a[3]. 
+
+// Now, how can we make them equal to x = 4. as, mentioned above. 
+
+// ans = (4-1) + (4-3) = 4. How?. Just try run examples for multiple test cases, so ans = (N-a[0]) + (N-a[1]) ==> 2*N - (a[0]+a[1])
+
+// So, as discussed sum of odd numbers. is square of their count. 
+
+// Here is one more 
+class Solution {
+    public long minOperations(int N) {
+        // Code here
+        int mid=N/2;
+        return N%2==0?(long)mid*(long)mid:(long)mid*(long)(mid+1);
+    }
+}
+
+// another one
+
+
+// User function Template for Java
+
+class Solution {
+    public long minOperations(int N) {
+        // Code here
+        
+        
+        return (long)N*(long)N/4;
+    }
+}
