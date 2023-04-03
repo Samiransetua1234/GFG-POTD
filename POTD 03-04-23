@@ -1,0 +1,38 @@
+class Solution 
+{ 
+    static int xmod11(String x)
+	{    
+	    // code here
+        int ans=0;
+        
+        for(int i=0;i<x.length();i++)  ans=(ans*10+(int)(x.charAt(i)-'0'))%11;
+  
+        return ans;
+	}
+} 
+
+
+
+Finding the difference of sum at even digits and odd digits is not the correct approach because it just tells us whether the number of divisible by 11 that's what divisibility rule of 11 means.
+
+In the article below I've explained the correct approach along with the mathematical derivation:-
+
+Solution: Approach🤔
+I'll start traversing the string from 0th index till n-1.
+
+for each index I'll find the remainder when string(0,i) is divided by 11.
+
+When I reach the last index then I'll have the answer for whole string.
+
+ 
+
+Now the question you will ask is, how to calculate the answer for a particular index "i"??
+See the below diagram, suppose we want to calculate the answer for ith index.
+
+Before moving to the diagram, recall the divisibility rule:
+
+dividend= divisor*quotient + remainder
+
+
+
+Therefore, we have to find the ans for each index using equation 2.
