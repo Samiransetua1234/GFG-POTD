@@ -1,0 +1,17 @@
+approach here is to find the violation points (violation point is when your current char doesn't match with last char or previous char).
+using a for loop just find the violation points and make a count of it.
+then just return (count/2)+1 if it's a even and return (count/2)+2 if it's a odd.
+CODE
+
+class Solution{
+    int minSteps(String str) {
+        //Write your code here
+        int count = 0;
+        for(int i = 1; i < str.length(); i++){
+            if(str.charAt(i-1) != str.charAt(i)){
+                count++;
+            }
+        }
+        return (count %2 == 0)? (count/2)+1: (count/2)+2;
+    }
+}
